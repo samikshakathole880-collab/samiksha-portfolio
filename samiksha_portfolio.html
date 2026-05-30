@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samiksha Kathole – Digital Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple: #5B21B6;
+  --blue: #2563EB;
+  --orange: #FF6B35;
+  --cyan: #22D3EE;
+  --white: #FFFFFF;
+  --gray: #F8FAFC;
+  --dark: #0F172A;
+  --mid: #64748B;
+  --grad: linear-gradient(135deg, #5B21B6 0%, #2563EB 60%, #06B6D4 100%);
+  --grad2: linear-gradient(135deg, #2563EB 0%, #5B21B6 100%);
+  --card-shadow: 0 4px 24px rgba(37,99,235,0.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#EEF2FF;color:var(--dark);overflow-x:hidden;}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,33,182,0.08);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:60px;}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-pills{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-pill{background:none;border:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;color:var(--mid);cursor:pointer;padding:5px 10px;border-radius:20px;transition:all .2s;letter-spacing:.3px;}
+.nav-pill:hover,.nav-pill.active{background:var(--purple);color:#fff;}
+/* SLIDE WRAPPER */
+.slide{min-height:100vh;width:100%;display:none;padding-top:60px;}
+.slide.active{display:block;}
+/* ===== SLIDE 1: COVER ===== */
+.s1{background:var(--grad);position:relative;overflow:hidden;}
+.s1-bg-circle{position:absolute;border-radius:50%;background:rgba(255,255,255,0.05);}
+.s1-bg-circle.c1{width:600px;height:600px;top:-200px;right:-100px;}
+.s1-bg-circle.c2{width:400px;height:400px;bottom:-150px;left:-100px;}
+.s1-bg-circle.c3{width:200px;height:200px;top:200px;left:200px;}
+.s1-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:calc(100vh - 60px);padding:4rem 5rem;}
+.s1-left{}
+.s1-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:12px;font-weight:600;padding:6px 16px;border-radius:30px;margin-bottom:1.5rem;letter-spacing:.5px;}
+.s1-badge span{width:8px;height:8px;background:#22D3EE;border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1.hero{font-family:'Syne',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:1rem;}
+h1.hero .accent{color:#FFD700;}
+.s1-subtitle{font-size:1.1rem;color:rgba(255,255,255,0.8);margin-bottom:2rem;line-height:1.7;}
+.s1-contacts{display:flex;flex-direction:column;gap:10px;margin-bottom:2.5rem;}
+.s1-contact-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:13.5px;}
+.s1-contact-item .icon{width:32px;height:32px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.s1-cta-row{display:flex;gap:12px;}
+.btn-white{background:#fff;color:var(--purple);border:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;padding:12px 28px;border-radius:30px;cursor:pointer;transition:all .2s;letter-spacing:.3px;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:13px;padding:11px 28px;border-radius:30px;cursor:pointer;transition:all .2s;}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.1);}
+.s1-right{display:flex;justify-content:center;align-items:center;}
+.photo-frame{position:relative;width:340px;height:380px;}
+.photo-placeholder{width:300px;height:340px;background:rgba(255,255,255,0.12);border:3px dashed rgba(255,255,255,0.4);border-radius:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;}
+.photo-placeholder:hover{background:rgba(255,255,255,0.18);}
+.photo-placeholder .ph-icon{font-size:2.5rem;color:rgba(255,255,255,0.5);}
+.photo-placeholder .ph-text{color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;text-align:center;}
+.photo-float-card{position:absolute;background:rgba(255,255,255,0.95);border-radius:14px;padding:10px 14px;box-shadow:0 8px 24px rgba(0,0,0,0.12);}
+.photo-float-card.fc1{bottom:20px;right:-20px;display:flex;align-items:center;gap:8px;}
+.photo-float-card.fc2{top:30px;left:-20px;}
+.fc1 .fc-icon{width:36px;height:36px;background:var(--grad);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.fc1 .fc-text .t1{font-weight:700;font-size:13px;color:var(--dark);}
+.fc1 .fc-text .t2{font-size:11px;color:var(--mid);}
+.fc2 .fc-num{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--purple);}
+.fc2 .fc-label{font-size:11px;color:var(--mid);font-weight:500;}
+/* SKILLS STRIP */
+.skills-strip {
+    /* background: rgba(255, 255, 255, 0.08); */
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+    /* padding: 1.2rem 5rem; */
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+}
+.skills-strip span{white-space:nowrap;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;letter-spacing:.5px;display:flex;align-items:center;gap:6px;}
+.skills-strip span::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%;}
+/* ===== SECTION HEADER ===== */
+.section-header{text-align:center;margin-bottom:3rem;}
+.section-tag{display:inline-block;background:linear-gradient(135deg,rgba(91,33,182,.1),rgba(37,99,235,.1));color:var(--purple);font-size:11px;font-weight:700;padding:5px 16px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:.8rem;border:1px solid rgba(91,33,182,.15);}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--dark);line-height:1.2;}
+.section-title .grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.section-sub{color:var(--mid);font-size:15px;margin-top:.6rem;}
+/* ===== SLIDE 2: ABOUT ===== */
+.s2{background:#fff;padding:5rem;}
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start;}
+.about-photo-col{}
+.about-photo-wrap{position:relative;}
+.about-photo-box{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#EDE9FE,#DBEAFE);border-radius:24px;border:3px dashed #C4B5FD;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;margin-bottom:1.5rem;}
+.about-photo-box .ph-icon{font-size:2rem;color:#A78BFA;}
+.about-photo-box .ph-text{color:#7C3AED;font-size:12px;font-weight:600;text-align:center;padding:0 1rem;}
+.about-stats-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.about-stat{background:var(--grad);border-radius:16px;padding:16px;text-align:center;}
+.about-stat .stat-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;}
+.about-stat .stat-label{font-size:11px;color:rgba(255,255,255,0.8);font-weight:600;letter-spacing:.3px;}
+.about-content-col{}
+.about-intro{font-size:15px;line-height:1.8;color:#334155;margin-bottom:2rem;}
+.about-intro strong{color:var(--purple);}
+.info-card{background:var(--gray);border-radius:16px;padding:1.5rem;margin-bottom:1.2rem;border-left:4px solid var(--purple);}
+.info-card h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--purple);letter-spacing:.5px;text-transform:uppercase;margin-bottom:.8rem;}
+.info-card p{font-size:14px;color:#475569;line-height:1.6;}
+.edu-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:.8rem;}
+.edu-dot{width:36px;height:36px;min-width:36px;background:var(--grad);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.edu-info .edu-degree{font-size:14px;font-weight:700;color:var(--dark);}
+.edu-info .edu-school{font-size:12px;color:var(--mid);}
+.interest-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:.5rem;}
+.interest-tag{background:linear-gradient(135deg,rgba(91,33,182,.08),rgba(37,99,235,.08));color:var(--purple);font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;border:1px solid rgba(91,33,182,.15);}
+/* ===== SLIDE 3: SKILLS ===== */
+.s3{background:var(--gray);padding:5rem;}
+.skills-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;}
+.skill-cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.skill-card{background:#fff;border-radius:20px;padding:1.5rem;box-shadow:var(--card-shadow);border:1px solid rgba(37,99,235,.07);transition:transform .2s;}
+.skill-card:hover{transform:translateY(-4px);}
+.skill-card .sk-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:.8rem;}
+.sk-icon.purple{background:linear-gradient(135deg,#EDE9FE,#DDD6FE);}
+.sk-icon.blue{background:linear-gradient(135deg,#DBEAFE,#BFDBFE);}
+.sk-icon.orange{background:linear-gradient(135deg,#FEF3C7,#FDE68A);}
+.sk-icon.cyan{background:linear-gradient(135deg,#CFFAFE,#A5F3FC);}
+.skill-card .sk-name{font-weight:700;font-size:14px;color:var(--dark);margin-bottom:.3rem;}
+.skill-card .sk-level{font-size:12px;color:var(--mid);margin-bottom:.8rem;}
+.prog-bar{height:6px;background:#E2E8F0;border-radius:10px;overflow:hidden;}
+.prog-fill{height:100%;border-radius:10px;background:var(--grad);}
+.tools-section{}
+.tools-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:1.2rem;}
+.tool-item{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:12px 16px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+.tool-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;}
+.t-google{background:#FEF2F2;color:#EF4444;}
+.t-meta{background:#EFF6FF;color:#1D4ED8;}
+.t-canva{background:#F0FDF4;color:#16A34A;}
+.t-capcut{background:#FFF7ED;color:#EA580C;}
+.t-gsc{background:#ECFDF5;color:#059669;}
+.t-ga{background:#FDF4FF;color:#9333EA;}
+.tool-info .t-name{font-weight:700;font-size:13px;color:var(--dark);}
+.tool-info .t-cat{font-size:11px;color:var(--mid);}
+.tool-bar-wrap{flex:1;}
+.tool-prog{height:5px;background:#E2E8F0;border-radius:10px;overflow:hidden;}
+.tool-prog-fill{height:100%;border-radius:10px;}
+.fill-google{background:linear-gradient(90deg,#EF4444,#F97316);}
+.fill-meta{background:linear-gradient(90deg,#2563EB,#7C3AED);}
+.fill-canva{background:linear-gradient(90deg,#10B981,#22D3EE);}
+.fill-capcut{background:linear-gradient(90deg,#EA580C,#F59E0B);}
+.fill-gsc{background:linear-gradient(90deg,#059669,#22D3EE);}
+.fill-ga{background:linear-gradient(90deg,#9333EA,#EC4899);}
+/* ===== SLIDE 4: TIMELINE ===== */
+.s4{background:#fff;padding:5rem;}
+.timeline-wrap{position:relative;max-width:800px;margin:0 auto;}
+.timeline-line{position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--purple),var(--blue),var(--cyan));transform:translateX(-50%);}
+.tl-item{display:grid;grid-template-columns:1fr 40px 1fr;gap:1rem;margin-bottom:2.5rem;align-items:start;}
+.tl-item.left .tl-content{grid-column:1;text-align:right;}
+.tl-item.left .tl-empty{grid-column:3;}
+.tl-item.right .tl-content{grid-column:3;}
+.tl-item.right .tl-empty{grid-column:1;}
+.tl-dot{grid-column:2;width:40px;height:40px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 0 6px rgba(91,33,182,.1);z-index:2;position:relative;}
+.tl-card{background:var(--gray);border-radius:16px;padding:1.2rem 1.4rem;border:1px solid rgba(91,33,182,.08);}
+.tl-date{font-size:11px;font-weight:700;color:var(--purple);letter-spacing:.5px;text-transform:uppercase;margin-bottom:.3rem;}
+.tl-title{font-weight:700;font-size:15px;color:var(--dark);margin-bottom:.3rem;}
+.tl-desc{font-size:13px;color:var(--mid);line-height:1.5;}
+/* ===== SLIDE 5: SMM CASE STUDY ===== */
+.s5{background:var(--gray);padding:5rem;}
+.case-hero{background:var(--grad);border-radius:28px;padding:2.5rem;margin-bottom:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.case-hero-left h3{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.5rem;}
+.case-hero-left p{color:rgba(255,255,255,.8);font-size:14px;}
+.case-tag{display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:.8rem;letter-spacing:.5px;}
+.case-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.case-kpi{background:rgba(255,255,255,.12);border-radius:14px;padding:14px;text-align:center;}
+.case-kpi .kpi-num{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;}
+.case-kpi .kpi-label{font-size:11px;color:rgba(255,255,255,.7);font-weight:600;}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.case-card{background:#fff;border-radius:20px;padding:1.5rem;box-shadow:var(--card-shadow);}
+.case-card h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--dark);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.case-card h4 span{width:28px;height:28px;border-radius:8px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:14px;}
+.instagram-mock{background:#fff;border-radius:16px;border:1px solid #E2E8F0;overflow:hidden;margin-top:.8rem;}
+.ig-header{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #F1F5F9;}
+.ig-avatar{width:28px;height:28px;border-radius:50%;background:var(--grad);}
+.ig-handle{font-size:12px;font-weight:700;color:var(--dark);}
+.ig-img-placeholder{width:100%;aspect-ratio:1;background:linear-gradient(135deg,#EDE9FE,#DBEAFE);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;border:3px dashed #C4B5FD;}
+.ig-img-placeholder .ph-icon{font-size:1.5rem;color:#A78BFA;}
+.ig-img-placeholder .ph-text{font-size:11px;color:#7C3AED;font-weight:600;}
+.ig-actions{padding:10px 12px;display:flex;gap:8px;}
+.ig-action{font-size:18px;}
+.ig-caption{padding:0 12px 10px;font-size:11px;color:#334155;line-height:1.5;}
+.strategy-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.strategy-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#475569;}
+.strategy-list li .dot{width:22px;height:22px;min-width:22px;border-radius:6px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;}
+/* ===== SLIDE 6: SEO ===== */
+.s6{background:#fff;padding:5rem;}
+.seo-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;}
+.seo-left{}
+.seo-section-cards{display:flex;flex-direction:column;gap:1rem;}
+.seo-card{background:var(--gray);border-radius:16px;padding:1.2rem 1.4rem;border:1px solid rgba(37,99,235,.07);}
+.seo-card h4{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:.6rem;display:flex;align-items:center;gap:8px;}
+.seo-card h4 .tag{background:var(--grad);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;}
+.seo-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.seo-metric{background:#fff;border-radius:12px;padding:12px;text-align:center;border:1px solid #E2E8F0;}
+.seo-metric .m-num{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.seo-metric .m-label{font-size:11px;color:var(--mid);}
+.seo-right{}
+.seo-dash-mock{background:var(--gray);border-radius:20px;border:1px solid #E2E8F0;overflow:hidden;}
+.seo-dash-header{background:var(--grad);padding:12px 16px;display:flex;align-items:center;gap:8px;}
+.seo-dash-header .dash-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);}
+.seo-dash-header .dash-title{color:#fff;font-size:12px;font-weight:700;}
+.seo-dash-body{padding:16px;}
+.kw-table{width:100%;border-collapse:collapse;}
+.kw-table th{font-size:11px;color:var(--mid);font-weight:600;text-align:left;padding:6px 8px;border-bottom:1px solid #E2E8F0;}
+.kw-table td{font-size:12px;color:var(--dark);padding:7px 8px;border-bottom:1px solid #F1F5F9;}
+.kw-tag{background:linear-gradient(135deg,rgba(91,33,182,.08),rgba(37,99,235,.08));color:var(--purple);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;}
+.trend-up{color:#10B981;font-weight:700;font-size:12px;}
+.trend-down{color:#EF4444;font-weight:700;font-size:12px;}
+.dash-placeholder{margin-top:12px;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#EDE9FE,#DBEAFE);border-radius:12px;border:3px dashed #C4B5FD;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;}
+.dash-placeholder .ph-icon{font-size:2rem;color:#A78BFA;}
+.dash-placeholder .ph-text{font-size:12px;color:#7C3AED;font-weight:600;text-align:center;}
+/* ===== SLIDE 7: GOOGLE ADS ===== */
+.s7{background:var(--gray);padding:5rem;}
+.ads-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;}
+.ad-copy-card{background:var(--grad);border-radius:24px;padding:2rem;margin-bottom:1.2rem;}
+.ad-copy-card h4{color:rgba(255,255,255,.7);font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:.5rem;}
+.ad-copy-mock{background:rgba(255,255,255,.12);border-radius:14px;padding:1.2rem;border:1px solid rgba(255,255,255,.2);}
+.ad-mock-url{color:#86EFAC;font-size:12px;font-weight:600;margin-bottom:.3rem;}
+.ad-mock-headline{color:#fff;font-size:16px;font-weight:700;line-height:1.3;margin-bottom:.5rem;}
+.ad-mock-desc{color:rgba(255,255,255,.8);font-size:13px;line-height:1.5;}
+.ads-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.ads-info-card{background:#fff;border-radius:16px;padding:1.2rem;box-shadow:var(--card-shadow);}
+.ads-info-card h5{font-size:12px;font-weight:700;color:var(--mid);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.8rem;}
+.kw-pill{display:inline-block;background:linear-gradient(135deg,rgba(91,33,182,.08),rgba(37,99,235,.08));color:var(--purple);font-size:11px;font-weight:600;padding:4px 10px;border-radius:12px;margin:2px;}
+.ads-right{}
+.ads-dash-mock{background:#fff;border-radius:20px;box-shadow:var(--card-shadow);overflow:hidden;}
+.ads-dash-header{background:var(--grad);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;}
+.ads-dash-header span{color:#fff;font-size:13px;font-weight:700;}
+.ads-dash-header .live-badge{background:rgba(255,255,255,.2);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;}
+.ads-metrics-row{display:grid;grid-template-columns:repeat(4,1fr);padding:16px;gap:10px;border-bottom:1px solid #F1F5F9;}
+.ads-metric{text-align:center;}
+.ads-metric .a-num{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.ads-metric .a-label{font-size:10px;color:var(--mid);font-weight:600;}
+.ads-chart-placeholder{margin:16px;aspect-ratio:16/7;background:linear-gradient(135deg,#EDE9FE,#DBEAFE);border-radius:12px;border:3px dashed #C4B5FD;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;}
+/* ===== SLIDE 8: CERTS ===== */
+.s8{background:#fff;padding:5rem;}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.cert-card{background:var(--gray);border-radius:24px;padding:1.5rem;border:1px solid rgba(91,33,182,.08);transition:transform .2s;cursor:pointer;}
+.cert-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow);}
+.cert-img-placeholder{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#EDE9FE,#DBEAFE);border-radius:16px;border:3px dashed #C4B5FD;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin-bottom:1rem;cursor:pointer;}
+.cert-img-placeholder .ph-icon{font-size:2rem;color:#A78BFA;}
+.cert-img-placeholder .ph-text{font-size:11px;color:#7C3AED;font-weight:600;text-align:center;padding:0 .5rem;}
+.cert-issuer{font-size:11px;font-weight:700;color:var(--purple);letter-spacing:.5px;text-transform:uppercase;margin-bottom:.3rem;}
+.cert-name{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:.3rem;}
+.cert-date{font-size:12px;color:var(--mid);}
+.cert-badge{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,rgba(91,33,182,.1),rgba(37,99,235,.1));color:var(--purple);font-size:11px;font-weight:600;padding:4px 10px;border-radius:10px;margin-top:.5rem;}
+/* ===== SLIDE 9: PROJECTS ===== */
+.s9{background:var(--gray);padding:5rem;}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.proj-card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .2s;}
+.proj-card:hover{transform:translateY(-4px);}
+.proj-img{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#EDE9FE,#DBEAFE);border:3px dashed #C4B5FD;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;}
+.proj-img .ph-icon{font-size:2rem;color:#A78BFA;}
+.proj-img .ph-text{font-size:11px;color:#7C3AED;font-weight:600;text-align:center;}
+.proj-body{padding:1.2rem;}
+.proj-cat{font-size:11px;font-weight:700;color:var(--purple);letter-spacing:.5px;text-transform:uppercase;margin-bottom:.3rem;}
+.proj-title{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:.5rem;}
+.proj-desc{font-size:13px;color:var(--mid);line-height:1.5;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:.8rem;}
+.proj-tag{background:var(--gray);color:var(--mid);font-size:11px;font-weight:600;padding:3px 10px;border-radius:10px;}
+/* ===== SLIDE 10: WHY HIRE ME ===== */
+.s10{background:var(--grad);padding:5rem;position:relative;overflow:hidden;}
+.s10-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(34,211,238,.15),transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(255,107,53,.1),transparent 50%);}
+.s10-inner{position:relative;z-index:2;}
+.s10 .section-title{color:#fff;}
+.s10 .section-tag{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.2);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:3rem;}
+.why-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:1.5rem;backdrop-filter:blur(10px);}
+.why-card .wc-icon{font-size:2rem;margin-bottom:.8rem;}
+.why-card .wc-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:.5rem;}
+.why-card .wc-desc{font-size:13px;color:rgba(255,255,255,.75);line-height:1.5;}
+.why-bottom{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;}
+.why-quote{background:rgba(255,255,255,.08);border-left:4px solid var(--cyan);border-radius:0 16px 16px 0;padding:1.5rem;}
+.why-quote p{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;line-height:1.5;}
+.why-cta-col{text-align:center;}
+.why-ready-text{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:.5rem;}
+.why-ready-sub{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:1.5rem;}
+/* ===== SLIDE 11: CONTACT ===== */
+.s11{background:#fff;padding:5rem;}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.contact-left{}
+.contact-intro{font-size:15px;color:var(--mid);line-height:1.7;margin-bottom:2rem;}
+.contact-items{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;}
+.contact-item{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--gray);border-radius:14px;}
+.contact-item .ci-icon{width:44px;height:44px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.contact-item .ci-label{font-size:11px;color:var(--mid);font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.contact-item .ci-value{font-size:14px;font-weight:700;color:var(--dark);}
+.social-row{display:flex;gap:12px;}
+.social-btn{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;transition:transform .2s;border:none;}
+.social-btn:hover{transform:scale(1.1);}
+.sb-ig{background:linear-gradient(135deg,#F97316,#EC4899);}
+.sb-li{background:#0A66C2;}
+.sb-tw{background:#1DA1F2;}
+.sb-yt{background:#FF0000;}
+.contact-right{}
+.closing-card{background:var(--grad);border-radius:28px;padding:2.5rem;text-align:center;}
+.closing-photo-ph{width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,.15);border:3px dashed rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 1.2rem;cursor:pointer;}
+.closing-photo-ph .ph-icon{font-size:1.5rem;color:rgba(255,255,255,.6);}
+.closing-name{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.3rem;}
+.closing-role{color:rgba(255,255,255,.75);font-size:14px;margin-bottom:1.5rem;}
+.closing-tagline{font-size:15px;color:rgba(255,255,255,.9);line-height:1.6;font-style:italic;margin-bottom:1.5rem;}
+.closing-available{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:13px;font-weight:600;padding:8px 20px;border-radius:30px;}
+.closing-available span{width:8px;height:8px;background:#22D3EE;border-radius:50%;animation:pulse 2s infinite;}
+/* UTILITIES */
+.slide-content{max-width:1200px;margin:0 auto;}
+.tags-list{display:flex;flex-wrap:wrap;gap:6px;}
+.small-tag{background:linear-gradient(135deg,rgba(91,33,182,.08),rgba(37,99,235,.08));color:var(--purple);font-size:11px;font-weight:600;padding:4px 10px;border-radius:10px;border:1px solid rgba(91,33,182,.12);}
+/* FOOTER NAV ARROWS */
+.slide-nav{display:flex;justify-content:space-between;align-items:center;padding:2rem 5rem;background:var(--gray);border-top:1px solid rgba(91,33,182,.07);}
+.slide-nav button{display:flex;align-items:center;gap:8px;background:none;border:2px solid rgba(91,33,182,.2);color:var(--purple);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;padding:10px 20px;border-radius:30px;cursor:pointer;transition:all .2s;}
+.slide-nav button:hover{background:var(--purple);color:#fff;border-color:var(--purple);}
+.slide-indicator{font-size:13px;color:var(--mid);font-weight:600;}
+.s1 .slide-nav{background:rgba(255,255,255,.1);border-top:1px solid rgba(255,255,255,.1);}
+.s1 .slide-nav button{border-color:rgba(255,255,255,.3);color:#fff;}
+.s1 .slide-nav button:hover{background:#fff;color:var(--purple);}
+.s1 .slide-indicator{color:rgba(255,255,255,.7);}
+.s10 .slide-nav{background:rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.1);}
+.s10 .slide-nav button{border-color:rgba(255,255,255,.3);color:#fff;}
+.s10 .slide-nav button:hover{background:#fff;color:var(--purple);}
+.s10 .slide-indicator{color:rgba(255,255,255,.7);}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-logo">SK Portfolio</div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="goTo(0)">Cover</button>
+    <button class="nav-pill" onclick="goTo(1)">About</button>
+    <button class="nav-pill" onclick="goTo(2)">Skills</button>
+    <button class="nav-pill" onclick="goTo(3)">Journey</button>
+    <button class="nav-pill" onclick="goTo(4)">SMM Case</button>
+    <button class="nav-pill" onclick="goTo(5)">SEO Case</button>
+    <button class="nav-pill" onclick="goTo(6)">Google Ads</button>
+    <button class="nav-pill" onclick="goTo(7)">Certs</button>
+    <button class="nav-pill" onclick="goTo(8)">Projects</button>
+    <button class="nav-pill" onclick="goTo(9)">Why Me</button>
+    <button class="nav-pill" onclick="goTo(10)">Contact</button>
+  </div>
+</nav>
+
+<!-- ===== SLIDE 1: COVER ===== -->
+<section class="slide s1 active" id="slide-0">
+  <div class="s1-bg-circle c1"></div>
+  <div class="s1-bg-circle c2"></div>
+  <div class="s1-bg-circle c3"></div>
+  <div class="s1-inner">
+    <div class="s1-left">
+      <div class="s1-badge"><span></span> Available for Internship & Full-Time Roles</div>
+      <h1 class="hero">Hi, I'm <span class="accent">Samiksha</span><br>Kathole 👋</h1>
+      <p class="s1-subtitle">MBA Student & Digital Marketing Fresher crafting<br>data-driven strategies that grow brands online.</p>
+      <div class="s1-contacts">
+        <div class="s1-contact-item"><div class="icon">📧</div> samiksha.kathole@email.com</div>
+        <div class="s1-contact-item"><div class="icon">📞</div> +91 98XXX XXXXX</div>
+        <div class="s1-contact-item"><div class="icon">📍</div> Bengaluru, Karnataka</div>
+        <div class="s1-contact-item"><div class="icon">🔗</div> linkedin.com/in/samikshakathole</div>
+      </div>
+      <div class="s1-cta-row">
+        <button class="btn-white" onclick="goTo(10)">Get In Touch →</button>
+        <button class="btn-outline" onclick="goTo(1)">View Portfolio</button>
+      </div>
+    </div>
+    <div class="s1-right">
+      <div class="photo-frame">
+        <div class="photo-placeholder">
+          <div class="ph-icon">👤</div>
+          <div class="ph-text">📸 Click to add your<br>professional photo here</div>
+        </div>
+        <div class="photo-float-card fc1">
+          <div class="fc-icon">📊</div>
+          <div class="fc-text"><div class="t1">10+ Projects</div><div class="t2">Completed</div></div>
+        </div>
+        <div class="photo-float-card fc2">
+          <div class="fc-num">9+</div>
+          <div class="fc-label">Skills Mastered</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="skills-strip">
+    <span>Social Media Marketing</span><span>SEO</span><span>SEM</span><span>Google Ads</span><span>Meta Marketing</span><span>Content Creation</span><span>Canva Design</span><span>CapCut Editing</span><span>Google Analytics</span><span>Google Search Console</span>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(10)">← Last Slide</button>
+    <span class="slide-indicator">Slide 1 of 11</span>
+    <button onclick="goTo(1)">About Me →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 2: ABOUT ===== -->
+<section class="slide s2" id="slide-1">
+  <div class="slide-content">
+    <div class="section-header">
+      <div class="section-tag">About Me</div>
+      <div class="section-title">The Person Behind the <span class="grad-text">Strategy</span></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo-col">
+        <div class="about-photo-wrap">
+          <div class="about-photo-box">
+            <div class="ph-icon">👤</div>
+            <div class="ph-text">📸 Replace with your<br>professional photo<br>(Portrait preferred)</div>
+          </div>
+          <div class="about-stats-row">
+            <div class="about-stat"><div class="stat-num">MBA</div><div class="stat-label">Marketing Specialization</div></div>
+            <div class="about-stat"><div class="stat-num">9+</div><div class="stat-label">Digital Skills</div></div>
+            <div class="about-stat"><div class="stat-num">5+</div><div class="stat-label">Certifications</div></div>
+            <div class="about-stat"><div class="stat-num">10+</div><div class="stat-label">Practice Projects</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content-col">
+        <p class="about-intro">I'm <strong>Samiksha Kathole</strong>, an MBA student specializing in <strong>Digital Marketing</strong> with a passion for building brand stories, driving organic growth, and creating high-performing ad campaigns. I combine academic marketing theory with hands-on tool expertise to deliver measurable results.</p>
+        <div class="info-card">
+          <h4>🎯 Career Objective</h4>
+          <p>To launch my career as a Digital Marketing professional where I can leverage my skills in SEO, SEM, Social Media, and Analytics to help brands grow their online presence and achieve business goals.</p>
+        </div>
+        <div class="info-card">
+          <h4>🎓 Education</h4>
+          <div class="edu-item">
+            <div class="edu-dot">🎓</div>
+            <div class="edu-info">
+              <div class="edu-degree">MBA – Marketing & Digital Strategy</div>
+              <div class="edu-school">University Name · 2023–2025 · CGPA: X.X/10</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-dot">📚</div>
+            <div class="edu-info">
+              <div class="edu-degree">B.Com – Commerce</div>
+              <div class="edu-school">College Name · 2020–2023 · XX%</div>
+            </div>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4>💡 Interest Areas</h4>
+          <div class="interest-tags">
+            <span class="interest-tag">Brand Building</span>
+            <span class="interest-tag">Content Strategy</span>
+            <span class="interest-tag">Performance Marketing</span>
+            <span class="interest-tag">Social Media Growth</span>
+            <span class="interest-tag">Data Analytics</span>
+            <span class="interest-tag">Consumer Psychology</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(0)">← Cover Page</button>
+    <span class="slide-indicator">Slide 2 of 11</span>
+    <button onclick="goTo(2)">Skills & Tools →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 3: SKILLS ===== -->
+<section class="slide s3" id="slide-2">
+  <div class="slide-content">
+    <div class="section-header">
+      <div class="section-tag">Skills & Tools</div>
+      <div class="section-title">My <span class="grad-text">Digital Marketing</span> Toolkit</div>
+      <p class="section-sub">A comprehensive set of skills built through coursework, certifications & practice projects</p>
+    </div>
+    <div class="skills-layout">
+      <div>
+        <div class="skill-cards-grid">
+          <div class="skill-card"><div class="sk-icon purple">📱</div><div class="sk-name">Social Media Marketing</div><div class="sk-level">Advanced · Meta & Instagram</div><div class="prog-bar"><div class="prog-fill" style="width:88%"></div></div></div>
+          <div class="skill-card"><div class="sk-icon blue">🔍</div><div class="sk-name">SEO (Search Engine Opt.)</div><div class="sk-level">Intermediate · On & Off Page</div><div class="prog-bar"><div class="prog-fill" style="width:80%"></div></div></div>
+          <div class="skill-card"><div class="sk-icon orange">💰</div><div class="sk-name">SEM & Google Ads</div><div class="sk-level">Intermediate · Search & Display</div><div class="prog-bar"><div class="prog-fill" style="width:75%"></div></div></div>
+          <div class="skill-card"><div class="sk-icon cyan">🎨</div><div class="sk-name">Canva Design</div><div class="sk-level">Advanced · Social Media Assets</div><div class="prog-bar"><div class="prog-fill" style="width:92%"></div></div></div>
+          <div class="skill-card"><div class="sk-icon purple">📣</div><div class="sk-name">Meta Marketing</div><div class="sk-level">Intermediate · Ads Manager</div><div class="prog-bar"><div class="prog-fill" style="width:78%"></div></div></div>
+          <div class="skill-card"><div class="sk-icon blue">✍️</div><div class="sk-name">Content Creation</div><div class="sk-level">Advanced · Copy & Visual</div><div class="prog-bar"><div class="prog-fill" style="width:90%"></div></div></div>
+          <div class="skill-card"><div class="sk-icon orange">🎬</div><div class="sk-name">CapCut Video Editing</div><div class="sk-level">Intermediate · Reels & Shorts</div><div class="prog-bar"><div class="prog-fill" style="width:82%"></div></div></div>
+          <div class="skill-card"><div class="sk-icon cyan">📊</div><div class="sk-name">Google Analytics</div><div class="sk-level">Intermediate · GA4</div><div class="prog-bar"><div class="prog-fill" style="width:73%"></div></div></div>
+        </div>
+      </div>
+      <div class="tools-section">
+        <div class="tools-title">🛠 Tools & Platforms</div>
+        <div class="tool-item"><div class="tool-icon t-google">G</div><div class="tool-info"><div class="t-name">Google Ads</div><div class="t-cat">PPC & Display Campaigns</div></div><div class="tool-bar-wrap"><div class="tool-prog"><div class="tool-prog-fill fill-google" style="width:75%"></div></div></div></div>
+        <div class="tool-item"><div class="tool-icon t-meta">f</div><div class="tool-info"><div class="t-name">Meta Ads Manager</div><div class="t-cat">Facebook & Instagram Ads</div></div><div class="tool-bar-wrap"><div class="tool-prog"><div class="tool-prog-fill fill-meta" style="width:78%"></div></div></div></div>
+        <div class="tool-item"><div class="tool-icon t-canva">C</div><div class="tool-info"><div class="t-name">Canva Pro</div><div class="t-cat">Graphic Design & Templates</div></div><div class="tool-bar-wrap"><div class="tool-prog"><div class="tool-prog-fill fill-canva" style="width:92%"></div></div></div></div>
+        <div class="tool-item"><div class="tool-icon t-capcut">✂</div><div class="tool-info"><div class="t-name">CapCut</div><div class="t-cat">Reels & Short-form Video</div></div><div class="tool-bar-wrap"><div class="tool-prog"><div class="tool-prog-fill fill-capcut" style="width:82%"></div></div></div></div>
+        <div class="tool-item"><div class="tool-icon t-gsc">🔍</div><div class="tool-info"><div class="t-name">Google Search Console</div><div class="t-cat">SEO Performance & Indexing</div></div><div class="tool-bar-wrap"><div class="tool-prog"><div class="tool-prog-fill fill-gsc" style="width:70%"></div></div></div></div>
+        <div class="tool-item"><div class="tool-icon t-ga">📈</div><div class="tool-info"><div class="t-name">Google Analytics 4</div><div class="t-cat">Traffic & Conversion Analysis</div></div><div class="tool-bar-wrap"><div class="tool-prog"><div class="tool-prog-fill fill-ga" style="width:73%"></div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(1)">← About Me</button>
+    <span class="slide-indicator">Slide 3 of 11</span>
+    <button onclick="goTo(3)">My Journey →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 4: TIMELINE ===== -->
+<section class="slide s4" id="slide-3">
+  <div class="slide-content">
+    <div class="section-header">
+      <div class="section-tag">My Journey</div>
+      <div class="section-title">Digital Marketing <span class="grad-text">Learning Journey</span></div>
+      <p class="section-sub">From classroom to campaigns — my path in digital marketing</p>
+    </div>
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+      <div class="tl-item left">
+        <div class="tl-card" style="grid-column:1;text-align:right;">
+          <div class="tl-date">2020–2023</div>
+          <div class="tl-title">🎓 B.Com Graduation</div>
+          <div class="tl-desc">Built strong foundation in commerce, marketing fundamentals, and business communication.</div>
+        </div>
+        <div class="tl-dot" style="grid-column:2;">🎓</div>
+        <div style="grid-column:3;"></div>
+      </div>
+      <div class="tl-item right">
+        <div style="grid-column:1;"></div>
+        <div class="tl-dot" style="grid-column:2;">📚</div>
+        <div class="tl-card" style="grid-column:3;">
+          <div class="tl-date">2023</div>
+          <div class="tl-title">📚 Started MBA – Marketing</div>
+          <div class="tl-desc">Enrolled in MBA with marketing specialization. Discovered passion for digital marketing strategy.</div>
+        </div>
+      </div>
+      <div class="tl-item left">
+        <div class="tl-card" style="grid-column:1;text-align:right;">
+          <div class="tl-date">Early 2024</div>
+          <div class="tl-title">🏅 First Certifications</div>
+          <div class="tl-desc">Completed Google Digital Garage, HubSpot Content Marketing & Meta Blueprint certifications.</div>
+        </div>
+        <div class="tl-dot" style="grid-column:2;">🏅</div>
+        <div style="grid-column:3;"></div>
+      </div>
+      <div class="tl-item right">
+        <div style="grid-column:1;"></div>
+        <div class="tl-dot" style="grid-column:2;">🎨</div>
+        <div class="tl-card" style="grid-column:3;">
+          <div class="tl-date">Mid 2024</div>
+          <div class="tl-title">🎨 Design & Content Skills</div>
+          <div class="tl-desc">Mastered Canva for social media design, CapCut for Reels editing, and content calendar planning.</div>
+        </div>
+      </div>
+      <div class="tl-item left">
+        <div class="tl-card" style="grid-column:1;text-align:right;">
+          <div class="tl-date">Late 2024</div>
+          <div class="tl-title">📊 SEO & Analytics Deep Dive</div>
+          <div class="tl-desc">Learned Google Analytics 4, Search Console, keyword research tools and on-page SEO implementation.</div>
+        </div>
+        <div class="tl-dot" style="grid-column:2;">📊</div>
+        <div style="grid-column:3;"></div>
+      </div>
+      <div class="tl-item right">
+        <div style="grid-column:1;"></div>
+        <div class="tl-dot" style="grid-column:2;">🚀</div>
+        <div class="tl-card" style="grid-column:3;">
+          <div class="tl-date">2025</div>
+          <div class="tl-title">🚀 Practice Projects & Portfolio</div>
+          <div class="tl-desc">Built case studies in SMM, SEO & Google Ads. Ready to bring value to real brands as a Digital Marketer!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(2)">← Skills</button>
+    <span class="slide-indicator">Slide 4 of 11</span>
+    <button onclick="goTo(4)">SMM Case Study →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 5: SMM CASE STUDY ===== -->
+<section class="slide s5" id="slide-4">
+  <div class="slide-content">
+    <div class="section-header">
+      <div class="section-tag">Case Study 01</div>
+      <div class="section-title">Social Media Marketing – <span class="grad-text">Local Café Campaign</span></div>
+    </div>
+    <div class="case-hero">
+      <div class="case-hero-left">
+        <div class="case-tag">📍 Bengaluru · Practice Project</div>
+        <h3>Brew & Bloom Café<br>Instagram Growth Strategy</h3>
+        <p>A 30-day social media campaign designed to grow brand awareness, increase footfall, and build an engaged community for a local café using organic content strategy.</p>
+      </div>
+      <div class="case-kpis">
+        <div class="case-kpi"><div class="kpi-num">+2.4K</div><div class="kpi-label">Followers Gained</div></div>
+        <div class="case-kpi"><div class="kpi-num">8.7%</div><div class="kpi-label">Engagement Rate</div></div>
+        <div class="case-kpi"><div class="kpi-num">42K</div><div class="kpi-label">Total Reach</div></div>
+        <div class="case-kpi"><div class="kpi-num">18</div><div class="kpi-label">Posts Published</div></div>
+        <div class="case-kpi"><div class="kpi-num">6</div><div class="kpi-label">Reels Created</div></div>
+        <div class="case-kpi"><div class="kpi-num">340%</div><div class="kpi-label">Profile Visit Increase</div></div>
+      </div>
+    </div>
+    <div class="case-grid">
+      <div class="case-card">
+        <h4><span>📋</span> Content Calendar Strategy</h4>
+        <ul class="strategy-list">
+          <li><div class="dot">M</div>Monday: Menu highlight or "Brew of the Week" post</li>
+          <li><div class="dot">W</div>Wednesday: Behind-the-scenes Reel or team feature</li>
+          <li><div class="dot">F</div>Friday: User-generated content + weekend promo</li>
+          <li><div class="dot">S</div>Sunday: Aesthetic café vibe + motivational quote</li>
+        </ul>
+      </div>
+      <div class="case-card">
+        <h4><span>📱</span> Instagram Post Mockup</h4>
+        <div class="instagram-mock">
+          <div class="ig-header"><div class="ig-avatar"></div><div class="ig-handle">@brewandbloom.cafe</div></div>
+          <div class="ig-img-placeholder"><div class="ph-icon">🖼</div><div class="ph-text">📸 Add your Canva post design here<br>(1080×1080 recommended)</div></div>
+          <div class="ig-actions"><span class="ig-action">❤️</span><span class="ig-action">💬</span><span class="ig-action">📤</span></div>
+          <div class="ig-caption"><strong>@brewandbloom.cafe</strong> Start your Monday right ☕ Our signature Hazelnut Latte is back — smooth, nutty, and made with love. Tag a friend you'd bring here! 🤎 #BangaloreCafe #CoffeeLover</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <h4><span>#️⃣</span> Hashtag Strategy</h4>
+        <div class="tags-list">
+          <span class="small-tag">#BangaloreCafe</span><span class="small-tag">#CoffeeLoverIndia</span><span class="small-tag">#NammaBangalore</span><span class="small-tag">#CafeCulture</span><span class="small-tag">#InstaCafe</span><span class="small-tag">#IndianCoffeeScene</span><span class="small-tag">#BrewAndBloom</span><span class="small-tag">#CafeDiaries</span><span class="small-tag">#BengaluruEats</span><span class="small-tag">#SundayCoffee</span><span class="small-tag">#CoffeeAddict</span><span class="small-tag">#LocalCafe</span>
+        </div>
+        <p style="font-size:12px;color:var(--mid);margin-top:.8rem;">Mix: 3 brand hashtags + 5 niche + 4 broad. Target reach per post: 2K–5K impressions.</p>
+      </div>
+      <div class="case-card">
+        <h4><span>📈</span> Reach & Engagement Analysis</h4>
+        <div class="dash-placeholder" style="margin-top:0;">
+          <div class="ph-icon">📊</div>
+          <div class="ph-text">📸 Add your Instagram Insights screenshot here<br>(Engagement & Reach analytics)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(3)">← Journey</button>
+    <span class="slide-indicator">Slide 5 of 11</span>
+    <button onclick="goTo(5)">SEO Case Study →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 6: SEO ===== -->
+<section class="slide s6" id="slide-5">
+  <div class="slide-content">
+    <div class="section-header">
+      <div class="section-tag">Case Study 02</div>
+      <div class="section-title">SEO Optimization – <span class="grad-text">Website Audit & Ranking</span></div>
+    </div>
+    <div class="seo-layout">
+      <div class="seo-left">
+        <div class="seo-section-cards">
+          <div class="seo-card">
+            <h4>🔍 Keyword Research <span class="tag">Step 1</span></h4>
+            <div class="tags-list">
+              <span class="small-tag">cafe near me Bengaluru</span><span class="small-tag">best coffee Koramangala</span><span class="small-tag">specialty coffee Bengaluru</span><span class="small-tag">work-friendly cafe HSR</span><span class="small-tag">outdoor seating cafe</span>
+            </div>
+            <p style="font-size:12px;color:var(--mid);margin-top:.6rem;">Tools used: Google Keyword Planner · Ubersuggest · Google Trends</p>
+          </div>
+          <div class="seo-card">
+            <h4>📝 Meta Title & Description Optimization <span class="tag">Step 2</span></h4>
+            <p style="font-size:13px;color:#475569;margin-bottom:.5rem;"><strong>Before:</strong> "Brew and Bloom – Coffee Shop"</p>
+            <p style="font-size:13px;color:#10B981;"><strong>After:</strong> "Best Specialty Coffee in Koramangala | Brew & Bloom Café Bengaluru"</p>
+          </div>
+          <div class="seo-card">
+            <h4>🔗 Internal Linking Strategy <span class="tag">Step 3</span></h4>
+            <ul class="strategy-list">
+              <li><div class="dot">1</div>Linked Menu page from Homepage hero section</li>
+              <li><div class="dot">2</div>Blog posts linked to Location/Contact page</li>
+              <li><div class="dot">3</div>Added breadcrumb navigation sitewide</li>
+            </ul>
+          </div>
+          <div class="seo-card">
+            <h4>⚙️ Technical SEO Fixes <span class="tag">Step 4</span></h4>
+            <ul class="strategy-list">
+              <li><div class="dot">✓</div>Compressed images (reduced load time by 40%)</li>
+              <li><div class="dot">✓</div>Added alt text to all images</li>
+              <li><div class="dot">✓</div>Fixed broken links (3 found & resolved)</li>
+              <li><div class="dot">✓</div>Submitted XML sitemap to Google Search Console</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="seo-right">
+        <div style="margin-bottom:1.2rem;">
+          <div class="tools-title" style="font-size:14px;margin-bottom:1rem;">📊 Results (30-Day Period)</div>
+          <div class="seo-metrics">
+            <div class="seo-metric"><div class="m-num">+156%</div><div class="m-label">Organic Traffic</div></div>
+            <div class="seo-metric"><div class="m-num">8→3</div><div class="m-label">Avg. Keyword Position</div></div>
+            <div class="seo-metric"><div class="m-num">+89%</div><div class="m-label">Impressions</div></div>
+            <div class="seo-metric"><div class="m-num">4.2%</div><div class="m-label">CTR Improvement</div></div>
+          </div>
+        </div>
+        <div class="seo-dash-mock">
+          <div class="seo-dash-header"><div class="dash-dot"></div><div class="dash-dot"></div><div class="dash-dot"></div><div class="dash-title">Google Search Console Dashboard</div></div>
+          <div class="seo-dash-body">
+            <table class="kw-table">
+              <thead><tr><th>Keyword</th><th>Position</th><th>CTR</th><th>Trend</th></tr></thead>
+              <tbody>
+                <tr><td><span class="kw-tag">cafe koramangala</span></td><td>3</td><td>5.2%</td><td><span class="trend-up">↑ +5</span></td></tr>
+                <tr><td><span class="kw-tag">best coffee bengaluru</span></td><td>7</td><td>3.1%</td><td><span class="trend-up">↑ +8</span></td></tr>
+                <tr><td><span class="kw-tag">work cafe hsr layout</span></td><td>5</td><td>4.8%</td><td><span class="trend-up">↑ +11</span></td></tr>
+                <tr><td><span class="kw-tag">specialty coffee near me</span></td><td>12</td><td>1.9%</td><td><span class="trend-down">↓ -2</span></td></tr>
+              </tbody>
+            </table>
+            <div class="dash-placeholder"><div class="ph-icon">📸</div><div class="ph-text">Add your Google Search Console<br>performance screenshot here</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(4)">← SMM Case</button>
+    <span class="slide-indicator">Slide 6 of 11</span>
+    <button onclick="goTo(6)">Google Ads →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 7: GOOGLE ADS ===== -->
+<section class="slide s7" id="slide-6">
+  <div class="slide-content">
+    <div class="section-header">
+      <div class="section-tag">Case Study 03</div>
+      <div class="section-title">Google Ads Campaign – <span class="grad-text">Local Salon, Bengaluru</span></div>
+    </div>
+    <div class="ads-layout">
+      <div class="ads-left">
+        <div class="ad-copy-card">
+          <h4>📢 Sample Ad Copy</h4>
+          <div class="ad-copy-mock">
+            <div class="ad-mock-url">✓ ads · glowup-salon.in/offers</div>
+            <div class="ad-mock-headline">Best Salon in Bengaluru – Book Today & Save 20%</div>
+            <div class="ad-mock-desc">Premium hair, skin & nail services in Koramangala. Experienced stylists. 500+ 5-star reviews. Walk-in welcome or book online in 60 seconds!</div>
+          </div>
+        </div>
+        <div class="ads-info-grid">
+          <div class="ads-info-card">
+            <h5>🎯 Campaign Goal</h5>
+            <ul class="strategy-list">
+              <li><div class="dot">1</div>Drive online bookings via Google Search</li>
+              <li><div class="dot">2</div>Increase local salon visibility in Bengaluru</li>
+              <li><div class="dot">3</div>Target women 18–45 in 5km radius</li>
+            </ul>
+          </div>
+          <div class="ads-info-card">
+            <h5>👥 Audience Targeting</h5>
+            <ul class="strategy-list">
+              <li><div class="dot">G</div>Location: Bengaluru – 5km radius</li>
+              <li><div class="dot">A</div>Age: 18–45, Female</div></li>
+              <li><div class="dot">D</div>Device: Mobile preferred</li>
+              <li><div class="dot">T</div>Interests: Beauty & Wellness</li>
+            </ul>
+          </div>
+          <div class="ads-info-card" style="grid-column:1/-1;">
+            <h5>#️⃣ Target Keywords</h5>
+            <div class="tags-list">
+              <span class="kw-pill">[salon near me]</span><span class="kw-pill">[hair salon bengaluru]</span><span class="kw-pill">"best salon koramangala"</span><span class="kw-pill">+salon +booking +bengaluru</span><span class="kw-pill">[bridal makeup bengaluru]</span><span class="kw-pill">"affordable facial near me"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ads-right">
+        <div class="ads-dash-mock">
+          <div class="ads-dash-header"><span>Google Ads Dashboard – Glow Up Salon</span><span class="live-badge">● LIVE</span></div>
+          <div class="ads-metrics-row">
+            <div class="ads-metric"><div class="a-num">₹5K</div><div class="a-label">Budget</div></div>
+            <div class="ads-metric"><div class="a-num">4.8%</div><div class="a-label">Exp. CTR</div></div>
+            <div class="ads-metric"><div class="a-num">₹22</div><div class="a-label">Est. CPC</div></div>
+            <div class="ads-metric"><div class="a-num">12%</div><div class="a-label">Conv. Rate</div></div>
+          </div>
+          <div class="ads-chart-placeholder"><div class="ph-icon">📊</div><div class="ph-text">📸 Add your Google Ads dashboard screenshot here<br>(Performance & Impressions chart)</div></div>
+        </div>
+        <div style="margin-top:1.2rem;background:#fff;border-radius:16px;padding:1.2rem;box-shadow:var(--card-shadow);">
+          <div class="tools-title" style="font-size:13px;margin-bottom:.8rem;">📈 Expected Results (30-Day Estimate)</div>
+          <div class="seo-metrics">
+            <div class="seo-metric"><div class="m-num">2,800</div><div class="m-label">Est. Impressions</div></div>
+            <div class="seo-metric"><div class="m-num">134</div><div class="m-label">Est. Clicks</div></div>
+            <div class="seo-metric"><div class="m-num">16</div><div class="m-label">Est. Conversions</div></div>
+            <div class="seo-metric"><div class="m-num">₹312</div><div class="m-label">Est. CPA</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(5)">← SEO Case</button>
+    <span class="slide-indicator">Slide 7 of 11</span>
+    <button onclick="goTo(7)">Certifications →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 8: CERTIFICATIONS ===== -->
+<section class="slide s8" id="slide-7">
+  <div class="slide-content">
+    <div class="section-header">
+      <div class="section-tag">Certifications</div>
+      <div class="section-title">My <span class="grad-text">Credentials</span> & Achievements</div>
+      <p class="section-sub">Industry-recognized certifications validating my digital marketing expertise</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-img-placeholder"><div class="ph-icon">🏅</div><div class="ph-text">📸 Add Google Digital<br>Garage certificate here</div></div>
+        <div class="cert-issuer">Google</div>
+        <div class="cert-name">Digital Marketing & E-commerce</div>
+        <div class="cert-date">📅 Completed: 2024</div>
+        <div class="cert-badge">✅ Verified</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-img-placeholder"><div class="ph-icon">🏅</div><div class="ph-text">📸 Add HubSpot Content<br>Marketing certificate here</div></div>
+        <div class="cert-issuer">HubSpot Academy</div>
+        <div class="cert-name">Content Marketing Certification</div>
+        <div class="cert-date">📅 Completed: 2024</div>
+        <div class="cert-badge">✅ Verified</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-img-placeholder"><div class="ph-icon">🏅</div><div class="ph-text">📸 Add Meta Blueprint<br>certificate here</div></div>
+        <div class="cert-issuer">Meta Blueprint</div>
+        <div class="cert-name">Meta Certified Digital Marketing</div>
+        <div class="cert-date">📅 Completed: 2024</div>
+        <div class="cert-badge">✅ Verified</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-img-placeholder"><div class="ph-icon">🏅</div><div class="ph-text">📸 Add Google Ads<br>certificate here</div></div>
+        <div class="cert-issuer">Google Skillshop</div>
+        <div class="cert-name">Google Ads Search Certification</div>
+        <div class="cert-date">📅 Completed: 2024</div>
+        <div class="cert-badge">✅ Verified</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-img-placeholder"><div class="ph-icon">🏅</div><div class="ph-text">📸 Add SEMrush or<br>other certificate here</div></div>
+        <div class="cert-issuer">Semrush Academy</div>
+        <div class="cert-name">SEO Fundamentals Certification</div>
+        <div class="cert-date">📅 Completed: 2024</div>
+        <div class="cert-badge">✅ Verified</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-img-placeholder"><div class="ph-icon">➕</div><div class="ph-text">📸 Add your next<br>certification here</div></div>
+        <div class="cert-issuer">Add Your Issuer</div>
+        <div class="cert-name">Add Certificate Name Here</div>
+        <div class="cert-date">📅 Completed: 2025</div>
+        <div class="cert-badge">🔄 Editable</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(6)">← Google Ads</button>
+    <span class="slide-indicator">Slide 8 of 11</span>
+    <button onclick="goTo(8)">Projects →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 9: PROJECTS ===== -->
+<section class="slide s9" id="slide-8">
+  <div class="slide-content">
+    <div class="section-header">
+      <div class="section-tag">Projects & Work</div>
+      <div class="section-title">Portfolio <span class="grad-text">Projects</span> & Achievements</div>
+      <p class="section-sub">Practice projects, academic campaigns, and creative work samples</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-img"><div class="ph-icon">📱</div><div class="ph-text">📸 Add Instagram feed screenshot<br>or campaign creative here</div></div>
+        <div class="proj-body">
+          <div class="proj-cat">Social Media Marketing</div>
+          <div class="proj-title">Café Instagram Growth Campaign</div>
+          <div class="proj-desc">30-day organic social media strategy for local café. Grew from 800 to 3.2K followers with 8.7% engagement rate.</div>
+          <div class="proj-tags"><span class="proj-tag">Instagram</span><span class="proj-tag">Canva</span><span class="proj-tag">Reels</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-img"><div class="ph-icon">🔍</div><div class="ph-text">📸 Add GSC or SEO audit<br>report screenshot here</div></div>
+        <div class="proj-body">
+          <div class="proj-cat">SEO Optimization</div>
+          <div class="proj-title">Website SEO Audit & Optimization</div>
+          <div class="proj-desc">Full SEO audit for a local business website. Improved organic traffic by 156% in 30 days through on-page fixes.</div>
+          <div class="proj-tags"><span class="proj-tag">SEO</span><span class="proj-tag">GSC</span><span class="proj-tag">On-page</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-img"><div class="ph-icon">💰</div><div class="ph-text">📸 Add Google Ads dashboard<br>or campaign screenshot here</div></div>
+        <div class="proj-body">
+          <div class="proj-cat">Google Ads / SEM</div>
+          <div class="proj-title">Local Salon Google Ads Campaign</div>
+          <div class="proj-desc">Designed search campaign with targeted keywords, compelling ad copy, and audience segmentation for Bengaluru salon.</div>
+          <div class="proj-tags"><span class="proj-tag">Google Ads</span><span class="proj-tag">SEM</span><span class="proj-tag">PPC</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-img"><div class="ph-icon">🎨</div><div class="ph-text">📸 Add your Canva designs<br>or brand kit here</div></div>
+        <div class="proj-body">
+          <div class="proj-cat">Brand Design</div>
+          <div class="proj-title">Brand Identity & Social Kit Design</div>
+          <div class="proj-desc">Designed complete social media kit including logo, templates, color palette & typography system using Canva Pro.</div>
+          <div class="proj-tags"><span class="proj-tag">Canva</span><span class="proj-tag">Branding</span><span class="proj-tag">Design</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-img"><div class="ph-icon">🎬</div><div class="ph-text">📸 Add your Reels or video<br>campaign thumbnail here</div></div>
+        <div class="proj-body">
+          <div class="proj-cat">Video Marketing</div>
+          <div class="proj-title">Instagram Reels Series – Product Showcase</div>
+          <div class="proj-desc">Created 6-part Reels series for product showcase using CapCut. Achieved average 12K views per Reel.</div>
+          <div class="proj-tags"><span class="proj-tag">CapCut</span><span class="proj-tag">Reels</span><span class="proj-tag">Video</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-img"><div class="ph-icon">➕</div><div class="ph-text">📸 Add your next project<br>screenshot or creative here</div></div>
+        <div class="proj-body">
+          <div class="proj-cat">Future Project</div>
+          <div class="proj-title">Add Your Next Project Here</div>
+          <div class="proj-desc">This is a placeholder card. Replace with your upcoming project title, description, and relevant tags.</div>
+          <div class="proj-tags"><span class="proj-tag">Editable</span><span class="proj-tag">Add Tag</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(7)">← Certifications</button>
+    <span class="slide-indicator">Slide 9 of 11</span>
+    <button onclick="goTo(9)">Why Hire Me →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 10: WHY HIRE ME ===== -->
+<section class="slide s10" id="slide-9">
+  <div class="s10-bg"></div>
+  <div class="slide-content s10-inner">
+    <div class="section-header">
+      <div class="section-tag">Why Hire Me</div>
+      <div class="section-title">Why I'm Your <span style="color:#FFD700;">Next Digital Marketer</span></div>
+      <p style="color:rgba(255,255,255,.7);font-size:15px;margin-top:.6rem;">What I bring to the table — beyond the resume</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="wc-icon">🧠</div><div class="wc-title">Strategic Thinking</div><div class="wc-desc">I don't just post content — I build strategies backed by data, audience insights, and business objectives to drive real growth.</div></div>
+      <div class="why-card"><div class="wc-icon">🎨</div><div class="wc-title">Design + Marketing Combo</div><div class="wc-desc">Rare combination of creative design skills (Canva, CapCut) AND performance marketing know-how — I create AND optimise.</div></div>
+      <div class="why-card"><div class="wc-icon">📊</div><div class="wc-title">Data-Driven Mindset</div><div class="wc-desc">Every decision backed by Google Analytics, Search Console & Ads data. I measure, analyse, and iterate for better results.</div></div>
+      <div class="why-card"><div class="wc-icon">⚡</div><div class="wc-title">Fast Learner</div><div class="wc-desc">Mastered 9+ digital marketing tools and completed 5+ certifications in 12 months. I adapt quickly to new platforms and trends.</div></div>
+      <div class="why-card"><div class="wc-icon">🤝</div><div class="wc-title">Team Player</div><div class="wc-desc">Collaborative by nature — experience working in academic project teams, coordinating campaigns, and meeting tight deadlines.</div></div>
+      <div class="why-card"><div class="wc-icon">🚀</div><div class="wc-title">Hunger to Grow</div><div class="wc-desc">I'm not just looking for a job — I want to build a career. I'll put in extra hours, take initiative, and own every project I touch.</div></div>
+    </div>
+    <div class="why-bottom">
+      <div class="why-quote">
+        <p>"Give me a brand and a brief — I'll give you a campaign that converts."</p>
+        <p style="font-size:14px;color:rgba(255,255,255,.6);margin-top:.6rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;">— Samiksha Kathole</p>
+      </div>
+      <div class="why-cta-col">
+        <div class="why-ready-text">Ready to Hire? 🚀</div>
+        <div class="why-ready-sub">Let's build something great together</div>
+        <button class="btn-white" onclick="goTo(10)">View Contact Details →</button>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(8)">← Projects</button>
+    <span class="slide-indicator">Slide 10 of 11</span>
+    <button onclick="goTo(10)">Contact →</button>
+  </div>
+</section>
+
+<!-- ===== SLIDE 11: CONTACT ===== -->
+<section class="slide s11" id="slide-10">
+  <div class="slide-content">
+    <div class="section-header">
+      <div class="section-tag">Let's Connect</div>
+      <div class="section-title">Get In <span class="grad-text">Touch</span> With Me</div>
+      <p class="section-sub">Open to internship opportunities, freelance projects, and full-time digital marketing roles</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-left">
+        <p class="contact-intro">I'm currently available for <strong style="color:var(--purple);">internship</strong> and <strong style="color:var(--purple);">entry-level Digital Marketing roles</strong>. Whether you want to grow your brand's social media, improve your SEO rankings, or run paid ad campaigns — I'm ready to contribute from day one. Let's talk!</p>
+        <div class="contact-items">
+          <div class="contact-item"><div class="ci-icon">📧</div><div><div class="ci-label">Email</div><div class="ci-value">samiksha.kathole@email.com</div></div></div>
+          <div class="contact-item"><div class="ci-icon">📞</div><div><div class="ci-label">Phone</div><div class="ci-value">+91 98XXX XXXXX</div></div></div>
+          <div class="contact-item"><div class="ci-icon">📍</div><div><div class="ci-label">Location</div><div class="ci-value">Bengaluru, Karnataka, India</div></div></div>
+          <div class="contact-item"><div class="ci-icon">🔗</div><div><div class="ci-label">LinkedIn</div><div class="ci-value">linkedin.com/in/samikshakathole</div></div></div>
+        </div>
+        <div class="social-row">
+          <div class="social-btn sb-ig" title="Instagram">📷</div>
+          <div class="social-btn sb-li" title="LinkedIn">in</div>
+          <div class="social-btn sb-tw" title="Twitter">𝕏</div>
+          <div class="social-btn sb-yt" title="YouTube">▶</div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="closing-card">
+          <div class="closing-photo-ph"><div class="ph-icon">👤</div></div>
+          <div class="closing-name">Samiksha Kathole</div>
+          <div class="closing-role">MBA Student · Digital Marketing Fresher · Bengaluru</div>
+          <div class="closing-tagline">"Passionate about creating digital experiences that connect brands to people. Looking forward to turning my skills into your brand's success story."</div>
+          <div class="closing-available"><span></span> Available for Opportunities</div>
+        </div>
+        <div style="margin-top:1.2rem;background:var(--gray);border-radius:16px;padding:1.2rem;text-align:center;">
+          <p style="font-size:12px;color:var(--mid);margin-bottom:.5rem;font-weight:600;">SPECIALISING IN</p>
+          <div class="tags-list" style="justify-content:center;">
+            <span class="small-tag">Social Media Marketing</span><span class="small-tag">SEO</span><span class="small-tag">Google Ads</span><span class="small-tag">Content Creation</span><span class="small-tag">Meta Ads</span><span class="small-tag">Video Editing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-nav">
+    <button onclick="goTo(9)">← Why Hire Me</button>
+    <span class="slide-indicator">Slide 11 of 11</span>
+    <button onclick="goTo(0)">Back to Cover →</button>
+  </div>
+</section>
+
+<script>
+const totalSlides = 11;
+function goTo(index) {
+  document.querySelectorAll('.slide').forEach((s,i) => {
+    s.classList.toggle('active', i === index);
+  });
+  document.querySelectorAll('.nav-pill').forEach((p,i) => {
+    p.classList.toggle('active', i === index);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

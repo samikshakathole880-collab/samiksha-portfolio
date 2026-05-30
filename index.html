@@ -67,14 +67,7 @@ h1.hero .accent{color:#FFD700;}
 .fc2 .fc-num{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--purple);}
 .fc2 .fc-label{font-size:11px;color:var(--mid);font-weight:500;}
 /* SKILLS STRIP */
-.skills-strip {
-    /* background: rgba(255, 255, 255, 0.08); */
-    /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
-    /* padding: 1.2rem 5rem; */
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-}
+.skills-strip{background:rgba(255,255,255,0.08);border-top:1px solid rgba(255,255,255,0.1);padding:1.2rem 5rem;display:flex;gap:2rem;overflow-x:auto;}
 .skills-strip span{white-space:nowrap;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;letter-spacing:.5px;display:flex;align-items:center;gap:6px;}
 .skills-strip span::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%;}
 /* ===== SECTION HEADER ===== */
@@ -320,6 +313,168 @@ h1.hero .accent{color:#FFD700;}
 .s10 .slide-nav button{border-color:rgba(255,255,255,.3);color:#fff;}
 .s10 .slide-nav button:hover{background:#fff;color:var(--purple);}
 .s10 .slide-indicator{color:rgba(255,255,255,.7);}
+
+/* ===== HAMBURGER NAV ===== */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--purple);border-radius:2px;transition:all .3s;}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;z-index:99;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,33,182,.08);padding:1rem 1.5rem;flex-direction:column;gap:4px;max-height:calc(100vh - 60px);overflow-y:auto;}
+.nav-mobile.open{display:flex;}
+.nav-mobile .nav-pill{text-align:left;padding:10px 14px;border-radius:10px;font-size:13px;}
+
+/* ===== TABLET: ≤ 1024px ===== */
+@media(max-width:1024px){
+  .s1-inner{padding:3rem 2.5rem;gap:2rem;}
+  .s2,.s3,.s4,.s5,.s6,.s7,.s8,.s9,.s10,.s11{padding:3rem 2.5rem;}
+  .slide-content{padding:0;}
+  .slide-nav{padding:1.5rem 2.5rem;}
+  .skills-strip{padding:1.2rem 2.5rem;}
+  .about-grid{grid-template-columns:1fr 1.3fr;gap:2.5rem;}
+  .skills-layout{grid-template-columns:1fr;gap:2rem;}
+  .skill-cards-grid{grid-template-columns:repeat(4,1fr);}
+  .seo-layout{grid-template-columns:1fr 1fr;}
+  .ads-layout{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:repeat(3,1fr);}
+  .cert-grid{grid-template-columns:repeat(3,1fr);}
+  .proj-grid{grid-template-columns:repeat(3,1fr);}
+  .photo-frame{width:280px;height:320px;}
+  .photo-placeholder{width:250px;height:290px;}
+}
+
+/* ===== MOBILE: ≤ 768px ===== */
+@media(max-width:768px){
+  /* NAV */
+  .nav{padding:0 1.2rem;height:56px;}
+  .nav-pills{display:none;}
+  .nav-hamburger{display:flex;}
+  .slide{padding-top:56px;}
+
+  /* SHARED PADDING */
+  .s2,.s3,.s4,.s5,.s6,.s7,.s8,.s9,.s10,.s11{padding:2rem 1.2rem 1.2rem;}
+  .s10{padding:2rem 1.2rem 1.2rem;}
+  .slide-content{padding:0;}
+  .section-header{margin-bottom:2rem;}
+  .section-sub{font-size:13px;}
+
+  /* SLIDE NAV */
+  .slide-nav{padding:1rem 1.2rem;flex-wrap:wrap;gap:8px;}
+  .slide-nav button{font-size:12px;padding:8px 14px;}
+  .slide-indicator{width:100%;text-align:center;order:-1;font-size:12px;}
+
+  /* SLIDE 1: COVER */
+  .s1-inner{grid-template-columns:1fr;padding:2rem 1.2rem 1.5rem;min-height:auto;text-align:center;}
+  .s1-right{order:-1;margin-bottom:1.5rem;}
+  .photo-frame{width:200px;height:230px;margin:0 auto;}
+  .photo-placeholder{width:180px;height:210px;}
+  .photo-float-card.fc1{bottom:0px;right:-10px;}
+  .photo-float-card.fc2{top:10px;left:-10px;}
+  .s1-badge{font-size:11px;padding:5px 12px;}
+  h1.hero{font-size:2rem;text-align:center;}
+  .s1-subtitle{font-size:.95rem;text-align:center;}
+  .s1-subtitle br{display:none;}
+  .s1-contacts{align-items:center;}
+  .s1-cta-row{justify-content:center;flex-wrap:wrap;}
+  .skills-strip{padding:1rem 1.2rem;gap:1.2rem;}
+
+  /* SLIDE 2: ABOUT */
+  .about-grid{grid-template-columns:1fr;}
+  .about-photo-box{aspect-ratio:4/3;max-height:220px;}
+  .about-stats-row{grid-template-columns:repeat(4,1fr);gap:8px;}
+  .about-stat{padding:10px 6px;}
+  .about-stat .stat-num{font-size:1.2rem;}
+  .about-stat .stat-label{font-size:9px;}
+
+  /* SLIDE 3: SKILLS */
+  .skills-layout{grid-template-columns:1fr;}
+  .skill-cards-grid{grid-template-columns:1fr 1fr;}
+
+  /* SLIDE 4: TIMELINE */
+  .timeline-line{left:20px;transform:none;}
+  .tl-item{grid-template-columns:40px 1fr;gap:.8rem;}
+  .tl-item.left .tl-card,
+  .tl-item.right .tl-card{grid-column:2;text-align:left;}
+  .tl-item.left .tl-dot,
+  .tl-item.right .tl-dot{grid-column:1;grid-row:1;}
+  .tl-item .tl-card{grid-row:1;}
+  /* Hide empty spacer cells on mobile */
+  .tl-item > div:not(.tl-card):not(.tl-dot){display:none;}
+
+  /* SLIDE 5: SMM */
+  .case-hero{grid-template-columns:1fr;padding:1.5rem;}
+  .case-hero-left h3{font-size:1.2rem;}
+  .case-kpis{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .case-kpi .kpi-num{font-size:1.2rem;}
+  .case-grid{grid-template-columns:1fr;}
+
+  /* SLIDE 6: SEO */
+  .seo-layout{grid-template-columns:1fr;}
+  .kw-table th:nth-child(3),.kw-table td:nth-child(3){display:none;}
+
+  /* SLIDE 7: GOOGLE ADS */
+  .ads-layout{grid-template-columns:1fr;}
+  .ads-info-grid{grid-template-columns:1fr;}
+  .ads-info-card[style*="grid-column"]{grid-column:auto!important;}
+  .ads-metrics-row{grid-template-columns:repeat(2,1fr);}
+
+  /* SLIDE 8: CERTS */
+  .cert-grid{grid-template-columns:1fr 1fr;}
+
+  /* SLIDE 9: PROJECTS */
+  .proj-grid{grid-template-columns:1fr 1fr;}
+
+  /* SLIDE 10: WHY */
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .why-bottom{grid-template-columns:1fr;}
+  .why-ready-text{font-size:1.3rem;}
+
+  /* SLIDE 11: CONTACT */
+  .contact-layout{grid-template-columns:1fr;}
+}
+
+/* ===== SMALL MOBILE: ≤ 480px ===== */
+@media(max-width:480px){
+  .s2,.s3,.s4,.s5,.s6,.s7,.s8,.s9,.s10,.s11{padding:1.5rem 1rem 1rem;}
+  .slide-nav{padding:.8rem 1rem;}
+
+  /* Cover */
+  h1.hero{font-size:1.7rem;}
+  .s1-inner{padding:1.5rem 1rem;}
+  .photo-frame{width:160px;height:185px;}
+  .photo-placeholder{width:145px;height:170px;}
+  .photo-float-card{padding:7px 10px;}
+  .photo-float-card.fc1{right:-5px;bottom:-5px;}
+  .photo-float-card.fc2{left:-5px;top:5px;}
+  .fc2 .fc-num{font-size:15px;}
+  .btn-white,.btn-outline{padding:10px 18px;font-size:12px;}
+
+  /* About stats: 2 cols on very small */
+  .about-stats-row{grid-template-columns:1fr 1fr;}
+  .about-stat .stat-num{font-size:1.4rem;}
+  .about-stat .stat-label{font-size:10px;}
+
+  /* Skills: single column */
+  .skill-cards-grid{grid-template-columns:1fr;}
+  .skill-cards-grid .skill-card{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:12px;padding:1rem;}
+  .skill-cards-grid .skill-card .sk-icon{margin-bottom:0;}
+  .skill-cards-grid .skill-card .prog-bar{grid-column:1/-1;}
+
+  /* Case KPIs: 2 cols */
+  .case-kpis{grid-template-columns:1fr 1fr;}
+
+  /* Certs & Projects: single col */
+  .cert-grid{grid-template-columns:1fr;}
+  .proj-grid{grid-template-columns:1fr;}
+
+  /* Why: single col */
+  .why-grid{grid-template-columns:1fr;}
+
+  /* Timeline */
+  .tl-card{padding:1rem;}
+  .tl-title{font-size:13px;}
+  .tl-desc{font-size:12px;}
+
+  /* Ads table header — truncate */
+  .ads-dash-header span:first-child{font-size:11px;}
+}
 </style>
 </head>
 <body>
@@ -340,7 +495,23 @@ h1.hero .accent{color:#FFD700;}
     <button class="nav-pill" onclick="goTo(9)">Why Me</button>
     <button class="nav-pill" onclick="goTo(10)">Contact</button>
   </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="mobileMenu">
+  <button class="nav-pill active" onclick="goTo(0);closeMenu()">01 · Cover</button>
+  <button class="nav-pill" onclick="goTo(1);closeMenu()">02 · About Me</button>
+  <button class="nav-pill" onclick="goTo(2);closeMenu()">03 · Skills &amp; Tools</button>
+  <button class="nav-pill" onclick="goTo(3);closeMenu()">04 · My Journey</button>
+  <button class="nav-pill" onclick="goTo(4);closeMenu()">05 · SMM Case Study</button>
+  <button class="nav-pill" onclick="goTo(5);closeMenu()">06 · SEO Case Study</button>
+  <button class="nav-pill" onclick="goTo(6);closeMenu()">07 · Google Ads</button>
+  <button class="nav-pill" onclick="goTo(7);closeMenu()">08 · Certifications</button>
+  <button class="nav-pill" onclick="goTo(8);closeMenu()">09 · Projects</button>
+  <button class="nav-pill" onclick="goTo(9);closeMenu()">10 · Why Hire Me</button>
+  <button class="nav-pill" onclick="goTo(10);closeMenu()">11 · Contact</button>
+</div>
 
 <!-- ===== SLIDE 1: COVER ===== -->
 <section class="slide s1 active" id="slide-0">
@@ -998,15 +1169,30 @@ h1.hero .accent{color:#FFD700;}
 </section>
 
 <script>
-const totalSlides = 11;
 function goTo(index) {
-  document.querySelectorAll('.slide').forEach((s,i) => {
-    s.classList.toggle('active', i === index);
-  });
-  document.querySelectorAll('.nav-pill').forEach((p,i) => {
-    p.classList.toggle('active', i === index);
-  });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelectorAll('.slide').forEach((s,i) => s.classList.toggle('active', i===index));
+  // Sync both desktop pills (0-10) and mobile menu pills (11-21)
+  const allPills = document.querySelectorAll('.nav-pill');
+  allPills.forEach((p,i) => p.classList.toggle('active', i===index || i===index+11));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  const bars = document.querySelectorAll('.nav-hamburger span');
+  if(m.classList.contains('open')) {
+    bars[0].style.transform='rotate(45deg) translate(5px,5px)';
+    bars[1].style.opacity='0';
+    bars[2].style.transform='rotate(-45deg) translate(5px,-5px)';
+  } else {
+    closeMenu();
+  }
+}
+function closeMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.classList.remove('open');
+  const bars = document.querySelectorAll('.nav-hamburger span');
+  bars[0].style.transform=''; bars[1].style.opacity=''; bars[2].style.transform='';
 }
 </script>
 </body>
